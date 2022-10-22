@@ -14,5 +14,5 @@ services:
       - "--authrpc.vhosts *"
       - "--authrpc.jwtsecret /var/lib/ethereum/shared/jwtsecret"
     volumes:
-      - /var/lib/ethereum/execution:/var/lib/ethereum/execution
-      - /var/lib/ethereum/execution/shared:/var/lib/ethereum/execution/shared
+      - /var/lib/ethereum/execution:/var/lib/ethereum/execution:rw
+      - /var/lib/ethereum/execution/shared:/var/lib/ethereum/execution/shared:rw
