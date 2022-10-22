@@ -14,9 +14,5 @@ services:
       - "--authrpc.vhosts *"
       - "--authrpc.jwtsecret /var/lib/ethereum/shared/jwtsecret"
     volumes:
-      - type: bind
-        source: /var/lib/ethereum/execution
-        target: /var/lib/ethereum/execution
-      - type: bind
-        source: /var/lib/ethereum/execution/shared
-        target: /var/lib/ethereum/execution/shared
+      - /var/lib/ethereum/execution:/var/lib/ethereum/execution
+      - /var/lib/ethereum/execution/shared:/var/lib/ethereum/execution/shared
