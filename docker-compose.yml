@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  execution:
+    image: ethereum/client-go:v1.10.25
+    command:
+      - ${NETWORK}
+      - --http
+      - "--http.addr ${LISTEN_ADDRESS}"
+      - "--http.api ${HTTP_APIS}"
+      - "--http.vhosts *"
+      - "--datadir ${DATA_DIR}"
+      - "--authrpc.addr ${LISTEN_ADDRESS}"
+      - "--authrpc.port ${AUTH_RPC_PORT}"
+      - "--authrpc.vhosts *"
+      - "--authrpc.jwtsecret ${SHARED_JWT_SECRET}"
+    environment:
+      DATA_DIR: /var/lib/ethereum/execution
+      HTTP_APIS: "net,eth,web3"
+      LISTEN_ADDRESS: "0.0.0.0"
+      NETWORK: "--mainnet"
+      SHARED_JWT_SECRET: /var/lib/ethereum/shared/jwtsecret
+      AUTH_RPC_PORT: "8551"
+    volumes:
+      - type: bind
+        source: /var/lib/ethereum/execution
+        target: /var/lib/ethereum/execution
+      - type: bind
+        source: /var/lib/ethereum/execution/shared
+        target: /var/lib/ethereum/execution/shared
