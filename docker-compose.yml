@@ -5,7 +5,8 @@ services:
     command:
       - --mainnet
       - --http
-      - "--http.addr 0.0.0.0"
+      - --http.addr
+      - "0.0.0.0"
       - "--http.api net,eth,web3"
       - "--http.vhosts *"
       - "--datadir /var/lib/ethereum/execution"
