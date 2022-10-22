@@ -7,13 +7,20 @@ services:
       - --http
       - --http.addr
       - "0.0.0.0"
-      - "--http.api net,eth,web3"
-      - "--http.vhosts *"
-      - "--datadir /var/lib/ethereum/execution"
-      - "--authrpc.addr 0.0.0.0"
-      - "--authrpc.port 8551"
-      - "--authrpc.vhosts *"
-      - "--authrpc.jwtsecret /var/lib/ethereum/shared/jwtsecret"
+      - --http.api
+      - "net,eth,web3"
+      - --http.vhosts
+      - "*"
+      - --datadir
+      - "/var/lib/ethereum/execution"
+      - --authrpc.addr
+      - "0.0.0.0"
+      - --authrpc.port
+      - "8551"
+      - --authrpc.vhosts
+      - "*"
+      - --authrpc.jwtsecret
+      - "/var/lib/ethereum/shared/jwtsecret"
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
       # - /var/lib/ethereum/shared:/var/lib/ethereum/shared:rw
