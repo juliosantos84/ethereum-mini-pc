@@ -23,4 +23,8 @@ services:
       - "/var/lib/ethereum/shared/jwtsecret"
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
-      # - /var/lib/ethereum/shared:/var/lib/ethereum/shared:rw
+    networks:
+      - ethereum
+networks:
+  ethereum:
+    driver: bridge
