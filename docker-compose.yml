@@ -42,7 +42,7 @@ services:
       - --execution-jwt
       - "/var/lib/ethereum/shared/jwtsecret"
       - --monitoring-endpoint
-      - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}"
+      - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     networks:
