@@ -28,6 +28,7 @@ services:
   consensus:
     image: sigp/lighthouse:v3.1.2
     command:
+      - lighthouse
       - beacon_node
       - --network
       - mainnet
