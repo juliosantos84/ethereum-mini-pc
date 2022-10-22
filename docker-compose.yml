@@ -25,6 +25,24 @@ services:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     networks:
       - ethereum
+  consensus:
+    image: sigp/lighthouse:v3.1.2
+    command:
+      - beacon_node
+      - --network
+      - mainnet
+      - --http
+      - --datadir
+      - "/var/lib/ethereum/consensus"
+      - --execution-endpoint
+      - "http://localhost:8551"
+      - --execution-jwt
+      - "/var/lib/ethereum/shared/jwtsecret"
+      # - --monitoring-endpoint ${LIGHTHOUSE_MONITORING_ENDPOINT}
+    volumes:
+      - /var/lib/ethereum:/var/lib/ethereum:rw
+    networks:
+      - ethereum
 networks:
   ethereum:
     driver: bridge
