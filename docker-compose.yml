@@ -47,6 +47,22 @@ services:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     networks:
       - ethereum
+  validator:
+    container_name: consensus.ethereum.local
+    image: sigp/lighthouse:v3.1.2
+    command:
+      - lighthouse
+      - validator_client
+      - --graffiti
+      - ${VALIDATOR_GRAFFITI}
+      - --network
+      - mainnet
+      - --datadir
+      - "/var/lib/ethereum/consensus"
+    volumes:
+      - /var/lib/ethereum:/var/lib/ethereum:rw
+    networks:
+      - ethereum
 networks:
   ethereum:
     driver: bridge
