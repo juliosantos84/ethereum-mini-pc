@@ -19,11 +19,9 @@ git clone git@github.com:juliosantos84/ethereum-mini-pc.git
 
 3. Configure env variables:
     1. Copy .env to your home directory<br/>
-    `cp .env ~/.env-mine`
+    `cp .env-example .env`
     1. Edit with your settings<br/>
-    `vi ~/.env-mine`
-    1. Source it<br/>
-    `source ~/.env-mine`
+    `vi ~/.env`
 
 4. Start docker compose<br/>
 `docker compose up -d`
