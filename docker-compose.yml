@@ -42,7 +42,7 @@ services:
       - --execution-jwt
       - "/var/lib/ethereum/shared/jwtsecret"
       - --monitoring-endpoint-period
-      - "180"
+      - "500"
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
     env_file:
@@ -63,6 +63,12 @@ services:
       - mainnet
       - --datadir
       - "/var/lib/ethereum/consensus"
+      - --beacon-nodes
+      - "consensus:5052"
+      - --monitoring-endpoint-period
+      - "500"
+      - --monitoring-endpoint
+      - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
     env_file:
       - .env
     volumes:
