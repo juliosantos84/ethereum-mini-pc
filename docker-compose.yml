@@ -44,6 +44,8 @@ services:
       - --monitoring-endpoint-period 180
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
+    env_file:
+      - .env
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     networks:
@@ -60,6 +62,8 @@ services:
       - mainnet
       - --datadir
       - "/var/lib/ethereum/consensus"
+    env_file:
+      - .env
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     networks:
