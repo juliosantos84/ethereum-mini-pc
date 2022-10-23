@@ -64,7 +64,7 @@ services:
       - --datadir
       - "/var/lib/ethereum/consensus"
       - --beacon-nodes
-      - "consensus:5052"
+      - "http://consensus:5052"
       - --monitoring-endpoint-period
       - "500"
       - --monitoring-endpoint
