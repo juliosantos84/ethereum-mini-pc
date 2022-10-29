@@ -22,6 +22,7 @@ services:
       - "*"
       - --authrpc.jwtsecret
       - "/var/lib/ethereum/shared/jwtsecret"
+      - --metrics
     restart: always
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
@@ -47,6 +48,7 @@ services:
       - "500"
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
+      - --metrics
     env_file:
       - .env
     restart: always
@@ -71,6 +73,7 @@ services:
       - "500"
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
+      - --metrics
     env_file:
       - .env
     restart: always
