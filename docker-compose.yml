@@ -23,6 +23,8 @@ services:
       - --authrpc.jwtsecret
       - "/var/lib/ethereum/shared/jwtsecret"
       - --metrics
+      - --metrics.addr
+      - "0.0.0.0"
     restart: always
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
