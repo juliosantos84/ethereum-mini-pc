@@ -29,3 +29,5 @@ git clone git@github.com:juliosantos84/ethereum-mini-pc.git
 5. Check the logs<br/>
 `docker compose logs`
 
+6. Import the validator (assumes you put the keystore in your `$HOME` dir)<br/>
+`bin/import-validator.sh`
