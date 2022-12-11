@@ -2,7 +2,7 @@ version: "3.9"
 services:
   execution:
     container_name: execution
-    image: ethereum/client-go:v1.10.25
+    image: ethereum/client-go:v1.10.26
     command:
       - --mainnet
       - --http
@@ -26,6 +26,7 @@ services:
       - --metrics.addr
       - "0.0.0.0"
     restart: always
+    stop_grace_period: 180s
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
     network_mode: host
@@ -33,7 +34,7 @@ services:
     #   - ethereum
   consensus:
     container_name: consensus
-    image: sigp/lighthouse:v3.2.1-amd64-modern
+    image: sigp/lighthouse:v3.3.0-amd64-modern
     command:
       - lighthouse
       - beacon_node
@@ -59,7 +60,7 @@ services:
     network_mode: host
   validator:
     container_name: validator
-    image: sigp/lighthouse:v3.2.1-amd64-modern
+    image: sigp/lighthouse:v3.3.0-amd64-modern
     command:
       - lighthouse
       - validator_client
