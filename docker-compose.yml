@@ -52,6 +52,8 @@ services:
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
       - --metrics
+      - --builder
+      - http://localhost:18550
     env_file:
       - .env
     restart: always
@@ -77,6 +79,7 @@ services:
       - --monitoring-endpoint
       - https://beaconcha.in/api/v1/client/metrics?apikey=${MONITORING_API_KEY}&machine=${MONITORING_MACHINE}
       - --metrics
+      - --builder-proposals
     env_file:
       - .env
     restart: always
