@@ -1,10 +1,12 @@
 #! /bin/bash
 
+VALIDATOR=<VALDATOR INDEX>
+
 # display current creds
 docker run --network=host wealdtech/ethdo:latest \
 validator credentials get \
 --connection=http://localhost:5052 \
---validator=255860
+--validator=$VALIDATOR
 
 echo
 
