@@ -2,7 +2,7 @@ version: "3.9"
 services:
   execution:
     container_name: execution
-    image: ethereum/client-go:v1.11.5
+    image: ethereum/client-go:v1.11.6
     command:
       - --mainnet
       - --http
@@ -34,7 +34,7 @@ services:
     #   - ethereum
   consensus:
     container_name: consensus
-    image: sigp/lighthouse:v4.0.2-rc.0-amd64-modern
+    image: sigp/lighthouse:v4.1.0-amd64-modern
     command:
       - lighthouse
       - beacon_node
@@ -62,7 +62,7 @@ services:
     network_mode: host
   validator:
     container_name: validator
-    image: sigp/lighthouse:v4.0.2-rc.0-amd64-modern
+    image: sigp/lighthouse:v4.1.0-amd64-modern
     command:
       - lighthouse
       - validator_client
@@ -94,8 +94,12 @@ services:
       - -addr
       - 0.0.0.0:18550
       - -relay-check
-      - -relays
+      - -relay
       - https://0xac6e77dfe25ecd6110b8e780608cce0dab71fdd5ebea22a16c0205200f2f8e2e3ad3b71d3499c54ad14d6c21b41a37ae@boost-relay.flashbots.net
+      - -relay
+      - https://0x9000009807ed12c1f08bf4e81c6da3ba8e3fc3d953898ce0102433094e5f22f21102ec057841fcb81978ed1ea0fa8246@builder-relay-mainnet.blocknative.com
+      - -relay
+      - https://0xa1559ace749633b997cb3fdacffb890aeebdb0f5a3b6aaa7eeeaf1a38af0a8fe88b9e4b1f61f236d2e64d95733327a62@relay.ultrasound.money
     env_file:
       - .env
     restart: always
