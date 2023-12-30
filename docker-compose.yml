@@ -55,6 +55,8 @@ services:
       - --metrics
       - --builder
       - http://localhost:18550
+      - --checkpoint-sync-url
+      - https://beaconstate.ethstaker.cc
     env_file:
       - .env
     restart: always
