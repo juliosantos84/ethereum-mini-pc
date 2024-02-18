@@ -29,7 +29,7 @@ services:
     stop_grace_period: 180s
     volumes:
       - /var/lib/ethereum:/var/lib/ethereum:rw
-      - /var/lib/ethereum/extended_storage/execution:/var/lib/ethereum/execution:rw
+      - /var/lib/ethereum/execution:/var/lib/ethereum/execution:rw
     network_mode: host
     # networks:
     #   - ethereum
