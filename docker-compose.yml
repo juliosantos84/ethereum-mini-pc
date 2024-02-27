@@ -91,7 +91,7 @@ services:
     network_mode: host
   mevboost:
     container_name: mevboost
-    image: flashbots/mev-boost:1.6
+    image: flashbots/mev-boost:1.7
     command:
       - -mainnet
       - -addr
