@@ -2,7 +2,7 @@ version: "3.9"
 services:
   execution:
     container_name: execution
-    image: ethereum/client-go:v1.15.9
+    image: ethereum/client-go:v1.15.10
     command:
       - --mainnet
       - --http
