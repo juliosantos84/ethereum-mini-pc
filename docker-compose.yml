@@ -37,7 +37,7 @@ services:
     #   - ethereum
   consensus:
     container_name: consensus
-    image: sigp/lighthouse:v7.0.0-amd64
+    image: sigp/lighthouse:v7.0.1-amd64
     command:
       - lighthouse
       - beacon_node
@@ -67,7 +67,7 @@ services:
     network_mode: host
   validator:
     container_name: validator
-    image: sigp/lighthouse:v7.0.0-amd64
+    image: sigp/lighthouse:v7.0.1-amd64
     command:
       - lighthouse
       - validator_client
