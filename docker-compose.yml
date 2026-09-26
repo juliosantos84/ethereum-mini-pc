@@ -2,7 +2,7 @@ version: "3.9"
 services:
   execution:
     container_name: execution
-    image: ethereum/client-go:v1.17.4
+    image: ethereum/client-go:v1.17.5
     command:
       - --mainnet
       - --http
@@ -37,7 +37,7 @@ services:
     #   - ethereum
   consensus:
     container_name: consensus
-    image: sigp/lighthouse:v8.2.1-amd64
+    image: sigp/lighthouse:v8.2.2-amd64
     command:
       - lighthouse
       - beacon_node
@@ -67,7 +67,7 @@ services:
     network_mode: host
   validator:
     container_name: validator
-    image: sigp/lighthouse:v8.2.1-amd64
+    image: sigp/lighthouse:v8.2.2-amd64
     command:
       - lighthouse
       - validator_client
